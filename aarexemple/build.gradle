@@ -26,7 +26,7 @@ android {
 }
 
 group = 'com.scott.example'
-version = '1.0.3'
+version = '1.0.4'
 def siteUrl = 'https://github.com/Scott110/FistJcenterAar'
 def gitUrl = 'https://github.com/Scott110/FistJcenterAar.git'
 def issuesUrl = 'https://github.com/Scott110/FistJcenterAar/issues'
