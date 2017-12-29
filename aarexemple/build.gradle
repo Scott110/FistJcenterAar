@@ -26,21 +26,23 @@ android {
 }
 
 group = 'com.scott.example'
-version = '1.0.1'
+version = '1.0.3'
 def siteUrl = 'https://github.com/Scott110/FistJcenterAar'
 def gitUrl = 'https://github.com/Scott110/FistJcenterAar.git'
 def issuesUrl = 'https://github.com/Scott110/FistJcenterAar/issues'
 
 //配置bintray参数
 Properties properties = new Properties()
-properties.load(project.rootProject.file('local.properties').newDataInputStream())
+properties.load(project.rootProject.file('/aarexemple/reponsity.properties').newDataInputStream())
 bintray {
     user = properties.getProperty("BINTRAY_USER")
     key = properties.getProperty("BINTRAY_KEY")
 
+   // user = 'scott01'
+    //key = 'faae7f3274800e5d0bfa06d1c3335781254bbcd4'
     configurations = ['archives'] //When uploading configuration files
     pkg {
-        repo = 'android'
+        repo = 'maven'
         name = project.name
         desc = 'Bintray aar publishing example'
         websiteUrl = siteUrl
@@ -71,9 +73,9 @@ install {
                 }
                 developers {
                     developer { //填写的一些基本信息
-                        id 'johnnycmj'
+                        id 'scott'
                         name 'scott_he'
-                        email 'heshtjs@163.com'
+                        email 'heshtjs@126.com'
                     }
                 }
                 scm {
@@ -90,8 +92,6 @@ install {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 }
-
-
 
 //=========打包javadocjar和sourcejar==============
 task sourcesJar(type: Jar) {
